@@ -38,11 +38,8 @@ jobs:
       - name: Set DISPLAY variable
         run: export DISPLAY=:99
 
+      # Ejecuta las pruebas del frontend con Chrome en el entorno con Xvfb
       - name: Run frontend tests with Chrome
-        run: npm test
-        working-directory: frontend
-
-      - name: Run frontend tests
         run: npm test
         working-directory: frontend
 
@@ -53,5 +50,5 @@ jobs:
       - name: Run backend tests
         run: npm test
         working-directory: backend
-      
+
      
