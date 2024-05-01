@@ -20,12 +20,19 @@
 }
 
 .full_image {
-    width: 100%;
-    height: 100vh;
+    width: 95%;
+    height: 97vh;
     position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(250, 250, 248, 0.953);
+    top: 10px;
+    left: 10px;
+    background-color: rgb(250, 250, 248);
+    border-radius: 15px;
+    box-shadow:
+        inset rgb(204, 208, 210) 0 0 3px,
+        rgb(115, 117, 118) 0 0 5px,
+        rgb(72, 73, 74) 0 0 15px,
+        rgb(14, 15, 15) 0 0 25px,
+        rgb(1, 1, 1) 0 0 35px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,18 +57,24 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-    .img_gallery {  
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-
-    img {
-        width: 40%;
+    h1 {
+        font-size: 50px;
     }
+    .img_gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+
+        img {
+            width: 40%;
+        }
     }
 
     .full_image {
+        position: fixed;
+        top: 15px;
+        left: 20px;
         img {
             width: 80%;
             max-width: 400px;
@@ -72,46 +85,43 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
     .img_gallery {
-    width: 100%;
-    max-height: 60vh;
-    margin: 50px auto 50px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+        width: 100%;
+        max-height: 58vh;
+        margin: 50px auto 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
     }
-    
+
     .full_image {
-    
+        position: fixed;
+        top: 15px;
+        left: 40px;
         img {
             width: 90%;
             max-width: 600px;
         }
     }
-
-
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
     .img_gallery {
-    width: 100%;
-    max-height: 60vh;
-    margin: 50px auto 50px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+        width: 100%;
+        max-height: 56vh;
+        margin: 50px auto 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
 
-    img {
-        width: 33%;
+        img {
+            width: 33%;
+        }
     }
 
-    }
-
-    
     .full_image {
-    
         img {
             width: 80%;
             max-width: 400px;
