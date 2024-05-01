@@ -1,1 +1,12 @@
 <h1>{{title}}</h1>
+
+<div class="full_image" #full_image_box>
+    <img src="../../../assets/imgs/crema hidra 1L.png" alt="" #full_image>
+    <span (click)="closeImg()">X</span>
+</div>
+
+<div class="img_gallery">
+    <img src="../../../assets/imgs/crema hidra 1L.png" alt="" (click)="openImg('../../../assets/imgs/crema hidra 1L.png')">
+    <img src="../../../assets/imgs/shampoo bioactivo 1L.png" alt="" (click)="openImg('../../../assets/imgs/shampoo bioactivo 1L.png')">
+    <img src="../../../assets/imgs/shampoo brillo y color 1L.png" alt="" (click)="openImg('../../../assets/imgs/shampoo brillo y color 1L.png')">
+</div>
