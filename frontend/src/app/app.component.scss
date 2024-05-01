@@ -20,8 +20,7 @@
   gap: 10px;
   grid-template:
     "header" 70px
-    "nav" 5%
-    "main" 80%
+    "main" 85%
     "footer" 4%;
 
   header {
@@ -33,15 +32,6 @@
     box-shadow: inset #eae8e8 0 0 3px, #bbb7b7 0 0 5px;
 
     // border: 1px solid black;
-  }
-
-  nav {
-    grid-area: nav;
-    background-color: rgb(255, 255, 255);
-    // color: aliceblue;
-    // border: 1px solid black;
-    box-shadow: inset #eae8e8 0 0 3px, #bbb7b7 0 0 5px;
-
   }
 
   main {
@@ -67,8 +57,7 @@
 @media (min-width: 768px) {
   .grid_container {
     grid-template:
-      "header nav" 30px
-      "header nav" 30px
+      "header header" 70px
       "main main" auto
       "footer footer" 60px/
       200px auto;
@@ -79,10 +68,10 @@
 @media (min-width: 992px) {
   .grid_container {
     grid-template:
-      "header header header" 100px 
-      "nav main main" auto
-      "footer footer footer" 60px /
-      200px auto 200px;
+      "header" 80px 
+      "main" auto
+      "footer" 60px /
+      auto;
   }
 }
 
@@ -92,9 +81,9 @@
     max-width: 1440px;
     margin: 0 auto;
     grid-template:
-      "header header header" 100px 
-      "nav main main" auto
-      "footer footer footer" 60px /
-      200px auto 200px;
+      "header" 100px 
+      "main" auto
+      "footer" 60px /
+      auto;
   }
  }
