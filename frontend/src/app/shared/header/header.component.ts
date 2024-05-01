@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class HeaderComponent {
 
-  
+  user: string = 'Iniciar sesion';
   
 }

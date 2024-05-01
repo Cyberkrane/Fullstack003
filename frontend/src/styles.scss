@@ -2,10 +2,11 @@
   font-family: "Maiden";
   src: url(../src/assets/fonts/maiden.ttf) format("opentype");
 }
+@import '~@fortawesome/fontawesome-free/css/all.css';
 
 
 body {
   font-family: "Montserrat", sans-serif;
-
+  background-color: #e0dddd;
 }
 
