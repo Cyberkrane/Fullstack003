@@ -13,43 +13,53 @@
 }
 
 .grid_container {
+
   min-height: 98vh;
   padding: 10px;
   display: grid;
   gap: 10px;
   grid-template:
-    "header" 10%
-    "nav" 9%
-    "main" 50%
-    "aside" 20%
+    "header" 70px
+    "nav" 5%
+    "main" 80%
     "footer" 4%;
 
   header {
     grid-area: header;
     background-color: rgb(253, 253, 253);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset #eae8e8 0 0 3px, #bbb7b7 0 0 5px;
+
+    // border: 1px solid black;
   }
 
   nav {
     grid-area: nav;
     background-color: rgb(255, 255, 255);
     // color: aliceblue;
+    // border: 1px solid black;
+    box-shadow: inset #eae8e8 0 0 3px, #bbb7b7 0 0 5px;
+
   }
 
   main {
     grid-area: main;
     background-color: rgb(255, 255, 255);
-  }
+    // border: 1px solid black;
+    box-shadow: inset #eae8e8 0 0 3px, #bbb7b7 0 0 5px;
 
-  aside {
-    grid-area: aside;
-    background-color: rgb(255, 255, 255);
-    // color: aliceblue
   }
 
   footer {
     grid-area: footer;
-    background-color: rgb(77, 75, 75);
-    color: aliceblue
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset #eae8e8 0 0 3px, #bbb7b7 0 0 5px;
+
   }
 }
 
@@ -57,10 +67,10 @@
 @media (min-width: 768px) {
   .grid_container {
     grid-template:
-      "header nav" 50px
-      "header nav" 50px
-      "aside main" auto
-      "footer footer" 100px/
+      "header nav" 30px
+      "header nav" 30px
+      "main main" auto
+      "footer footer" 60px/
       200px auto;
   }
 }
@@ -69,9 +79,22 @@
 @media (min-width: 992px) {
   .grid_container {
     grid-template:
-      "header header header" 100px
-      "nav main aside" auto
+      "header header header" 100px 
+      "nav main main" auto
       "footer footer footer" 60px /
-      200px auto 0px;
+      200px auto 200px;
   }
 }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+  .grid_container {
+    max-width: 1440px;
+    margin: 0 auto;
+    grid-template:
+      "header header header" 100px 
+      "nav main main" auto
+      "footer footer footer" 60px /
+      200px auto 200px;
+  }
+ }
