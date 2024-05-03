@@ -3,7 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent}
+  {
+    path: '', // path: '' hace referencia al path definido en app-routing.module.ts
+    component: HomeComponent
+  }
 ];
 
 @NgModule({
