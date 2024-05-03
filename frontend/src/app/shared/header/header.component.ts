@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +9,11 @@ import { Component, Input } from '@angular/core';
 export class HeaderComponent {
 
   user: string = 'Iniciar sesion';
-  
+
+  constructor(private router: Router) { }
+
+  irALogin() { 
+    this.router.navigate(['/auth/login']);
+  }
+
 }
