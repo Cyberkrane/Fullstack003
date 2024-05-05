@@ -1,4 +1,44 @@
 {
-    "users": [
-    ]
-  }
+  "users": [
+    {
+      "id": "793f",
+      "name": "Rolando",
+      "email": "cyberkrane@gmail.com",
+      "password": "asd123",
+      "repeat_password": "asd123",
+      "role": "admin"
+    },
+    {
+      "id": "893f",
+      "name": "andrea",
+      "email": "andy@gmail.com",
+      "password": "asd123",
+      "repeat_password": "asd123",
+      "role": "user"
+    },
+    {
+      "id": "7460",
+      "name": "Tess Mercer",
+      "email": "tess@gmail.com",
+      "password": "asd123",
+      "repeat_password": "asd123",
+      "role": "user"
+    },
+    {
+      "id": "97f6",
+      "name": "julio verne",
+      "email": "juliver@gmail.com",
+      "password": "qwe456",
+      "repeat_password": "qwe456",
+      "role": "user"
+    },
+    {
+      "id": "ea70",
+      "name": "riuka",
+      "email": "siloka@gmail.com",
+      "password": "zxc789",
+      "repeat_password": "zxc789",
+      "role": "user"
+    }
+  ]
+}

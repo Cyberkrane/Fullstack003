@@ -7,6 +7,8 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { AuthFormComponent } from './components/auth-form/auth-form.component';
 import { AuthTableComponent } from './components/auth-table/auth-table.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { AuthTableComponent } from './components/auth-table/auth-table.component
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule 
   ]
 })
 export class AuthModule { }

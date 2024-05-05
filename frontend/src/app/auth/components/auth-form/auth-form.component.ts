@@ -13,13 +13,7 @@ export class AuthFormComponent {
 
   @Input() title: string = 'si puedes leer este mensaje es porque esta fallando la interpolacion';
 
-  authForm: FormGroup = this.fb.group({
-    name: ['', [Validators.required, Validators.minLength(5)]],
-    email: ['', Validators.required],
-    password: ['', Validators.required],
-    repeat_password: [''],
-    role: ['', Validators.required],
-  })
+  authForm: FormGroup;
 
   constructor(private fb: FormBuilder,
               private router: Router,
@@ -27,13 +21,12 @@ export class AuthFormComponent {
   ) {
     // Inicializa el formulario
     this.authForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(5)]],
+      name: [''],
       email: ['', Validators.required],
       password: ['', Validators.required],
       repeat_password: [''],
       role: ['', Validators.required],
     });
-
   }
 
 
@@ -71,6 +64,7 @@ export class AuthFormComponent {
       return;
     }
     const formData = this.authForm.value;
+    this.authService.register(formData);
     console.log('form data', formData);
   }
   // Confirmar contraseña para registrarse
@@ -80,8 +74,35 @@ export class AuthFormComponent {
 
   // Accion de Logueo
   onLogin() {
-    throw new Error('Method not implemented.');
-  }
+    this.authService.login(this.authForm.value)
+      .subscribe(
+        (result: any) => {
+          console.log('Autenticación exitosa', result);
+          alert('Autenticación exitosa');
+          // Acciones después de una autenticación exitosa
+          if(result[0].role === 'admin') {
+            this.router.navigate(['admin-table']);
+          }
+          if(result[0].role === 'user') {
+            this.router.navigate(['forgot-password']);
+          }
+        },
+        (error: any) => {
+          console.error('Error en la autenticación', error);
+          alert('Algo salió chungo, intenta de nuevo');
+          // Manejar el error de autenticación
+          if (error === 'Credenciales inválidas') {
+            // Manejar el error de credenciales inválidas, por ejemplo
+            alert('Credenciales inválidas');
 
+          }
+        }
+      );
+    this.authForm.reset();
+  }
+  
+  onLogout() {
+    this.authService.logout();
+  }
 
 }
