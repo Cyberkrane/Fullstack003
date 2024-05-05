@@ -1,0 +1,15 @@
+# Ignorar el archivo db.json en la raíz del proyecto
+db.json
+
+# Ignorar archivos de configuración local
+.env
+
+# Ignorar directorios generados por Node.js
+node_modules/
+
+# Ignorar archivos generados por Angular
+/dist/
+
+# Ignorar archivos generados por el IDE
+.idea/
+.vscode/
