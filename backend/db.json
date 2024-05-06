@@ -7,6 +7,14 @@
       "password": "asd123",
       "repeat_password": "asd123",
       "role": "admin"
+    },
+    {
+      "id": "807c",
+      "name": "julia verne",
+      "email": "juliver@gmail.com",
+      "password": "qwe456",
+      "repeat_password": "qwe456",
+      "role": "user"
     }
   ]
 }

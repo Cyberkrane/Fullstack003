@@ -9,6 +9,8 @@ import { AuthFormComponent } from './components/auth-form/auth-form.component';
 import { AuthTableComponent } from './components/auth-table/auth-table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AccessDeniedComponent } from './pages/access-denied/access-denied.component';
+import { BussinessModule } from '../bussiness/bussiness.module';
 
 
 @NgModule({
@@ -17,13 +19,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     RegisterComponent,
     ForgotPasswordComponent,
     AuthFormComponent,
-    AuthTableComponent
+    AuthTableComponent,
+    AccessDeniedComponent
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    BussinessModule 
   ]
 })
 export class AuthModule { }

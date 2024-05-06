@@ -49,6 +49,7 @@ export class AuthService {
           }
         }),
         catchError((error: any) => {
+          this.router.navigate(['auth/access-denied']);
           console.log('*** Error ***', error);
           return throwError('Error de autenticación');
         })

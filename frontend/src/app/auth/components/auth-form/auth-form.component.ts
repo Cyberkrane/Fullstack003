@@ -84,7 +84,7 @@ export class AuthFormComponent {
             this.router.navigate(['admin-table']);
           }
           if(result[0].role === 'user') {
-            this.router.navigate(['forgot-password']);
+            this.router.navigate(['bussiness/user-table']);
           }
         },
         (error: any) => {
