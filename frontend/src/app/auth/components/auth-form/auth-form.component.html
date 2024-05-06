@@ -1,11 +1,11 @@
 <h1>{{ title }}</h1>
 
-<form autocomplete="off">
+<form [formGroup]="authForm" autocomplete="off">
 
-    <div class="form_field">
+    <div class="form_field" *ngIf="title == 'Register'">
         <label>Nombre: </label>
         <div class="item_row">
-            <input type="text" formControlName="name"> 
+            <input type="text" formControlName="name" required="required"> 
 
             <span *ngIf="isValidField('name')" 
                 class="validacion"
@@ -38,7 +38,7 @@
         </div>
     </div>
     
-    <div class="form_field">
+    <div class="form_field" *ngIf="title == 'Register'">
         <label>Confirm Password: </label>
         <div class="item_row">
             <input type="text" formControlName="repeat_password"> 
@@ -61,14 +61,13 @@
 
         </div>
     </div>
-
- 
+<br>
     <div class="buttons" >
         <button (click)="onLogin()" 
                 [disabled]="authForm.invalid"
                 *ngIf="title == 'Login'"
                 >Login</button>
-    
+<br>  
         <button (click)="onRegister()" 
                 [disabled]="authForm.invalid"
                 *ngIf="title == 'Register'"
@@ -76,7 +75,7 @@
     </div>
 
 </form>
-
+<br>
 <button (click)="acountRegister()"
         *ngIf="title == 'Login'"            
-        >No tengo cuenta che!</button>
+        >i've not an account.</button>

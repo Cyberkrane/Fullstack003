@@ -7,8 +7,19 @@
         <h1>Protonium</h1>
     </div>  
     <div class="spacer"></div>
-    <div class="user" (click)="irALogin()">
-        <i class="far fa-user"></i>
-        <p>{{user}}</p>
+
+    <div class="user">
+
+        <div class="open" *ngIf="user == 'Iniciar sesion'">
+          <i class="far fa-user" (click)="irALogin()" ></i> 
+          <p>{{user}}</p> 
+        </div>
+        
+        <div class="close" *ngIf="user != 'Iniciar sesion'">
+            <i class="fas fa-sign-out-alt" (click)="closeSession()" ></i>
+            <p>{{user}}</p>
+        </div>
+        
     </div>
+
 </div>
