@@ -25,7 +25,7 @@ export class AuthFormComponent {
       email: ['', Validators.required],
       password: ['', Validators.required],
       repeat_password: [''],
-      role: ['', Validators.required],
+      role: [''],
     });
   }
 

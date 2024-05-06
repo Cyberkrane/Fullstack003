@@ -37,7 +37,7 @@ export class AuthService {
   }
 
   login(user: User): Observable<any> {
-    return this.httpClient.get(`${this.baseUrl}/users?email=${user.email}&password=${user.password}&role=${user.role}`)
+    return this.httpClient.get(`${this.baseUrl}/users?email=${user.email}&password=${user.password}`)
       .pipe(
         tap((resp: any | null) => {
           if (resp && Object.keys(resp).length !== 0) {
