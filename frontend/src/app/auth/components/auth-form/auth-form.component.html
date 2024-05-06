@@ -49,8 +49,8 @@
 
         </div>
     </div>
-    
-    <div class="form_field">
+    <!-- TODO: hacer logica para que solo el administrador pueda asignar el rol -->
+    <div class="form_field" *ngIf="title == 'Register'" aria-required="true">
         <label>Role: </label>
         <div class="item_row">
             <input type="text" formControlName="role"> 
