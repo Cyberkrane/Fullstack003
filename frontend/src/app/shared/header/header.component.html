@@ -11,13 +11,13 @@
     <div class="user">
 
         <div class="open" *ngIf="user == 'Iniciar sesion'">
-          <i class="far fa-user" (click)="irALogin()" ></i> 
-          <p>{{user}}</p> 
+          <i class="far fa-user" (click)="irALogin()"></i> 
+          <p (click)="irALogin()">{{user}}</p> 
         </div>
         
         <div class="close" *ngIf="user != 'Iniciar sesion'">
-            <i class="fas fa-sign-out-alt" (click)="closeSession()" ></i>
-            <p>{{user}}</p>
+            <i class="fas fa-sign-out-alt" (click)="closeSession()"></i>
+            <p (click)="closeSession()">{{user}}</p>
         </div>
         
     </div>

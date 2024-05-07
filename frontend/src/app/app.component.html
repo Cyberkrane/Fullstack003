@@ -1,8 +1,15 @@
 <div class="grid_container">
-    <header>
-        <app-header></app-header>
-    </header>
-<!-- 
+  <app-alerts
+    [alertType]="alertType"
+    [alertState]="alertState"
+    [message]="message"
+  ></app-alerts>
+
+  <header>
+    <app-header></app-header>
+  </header>
+
+  <!-- 
 <nav>
     NAVBAR
   <ul>
@@ -12,11 +19,11 @@
   </ul>
 </nav> -->
 
-<main>
-  <router-outlet></router-outlet>
-</main>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
 
-<!-- <aside>
+  <!-- <aside>
     SIDEBAR
   <ul>
     <li>item</li>
@@ -25,8 +32,7 @@
   </ul>
 </aside> -->
 
-<footer>
-  <app-footer></app-footer>
-</footer> 
+  <footer>
+    <app-footer></app-footer>
+  </footer>
 </div>
-
