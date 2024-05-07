@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { AlertService } from 'src/app/global-components/services/alert.service';
 
 @Component({
   selector: 'app-auth-form',
@@ -17,7 +18,8 @@ export class AuthFormComponent {
 
   constructor(private fb: FormBuilder,
               private router: Router,
-              private authService: AuthService
+              private authService: AuthService,
+              private alertService: AlertService
   ) {
     // Inicializa el formulario
     this.authForm = this.fb.group({
@@ -59,13 +61,15 @@ export class AuthFormComponent {
   // Accion de Registro
   onRegister() {
     if (!this.correctPassword()) {
-      // this.alerts.alertDanger('Las contraseñas no coinciden', 1500);
+      this.alertService.alertDanger('Las contraseñas no coinciden', 2500);
       console.log('Las contraseñas no coinciden');
       return;
     }
     const formData = this.authForm.value;
     this.authService.register(formData);
     console.log('form data', formData);
+    this.alertService.alertSuccess('Registro exitoso', 2500);
+    this.authForm.reset();
   }
   // Confirmar contraseña para registrarse
   correctPassword(): boolean {
@@ -77,8 +81,6 @@ export class AuthFormComponent {
     this.authService.login(this.authForm.value)
       .subscribe(
         (result: any) => {
-          console.log('Autenticación exitosa', result);
-          alert('Autenticación exitosa');
           // Acciones después de una autenticación exitosa
           if(result[0].role === 'admin') {
             this.router.navigate(['admin-table']);
@@ -89,12 +91,12 @@ export class AuthFormComponent {
         },
         (error: any) => {
           console.error('Error en la autenticación', error);
-          alert('Algo salió chungo, intenta de nuevo');
+          this.alertService.alertOrange('Algo salió mal, intenta de nuevo', 2500);
           // Manejar el error de autenticación
           if (error === 'Credenciales inválidas') {
             // Manejar el error de credenciales inválidas, por ejemplo
             alert('Credenciales inválidas');
-
+            this.alertService.alertDanger('Credenciales inválidas', 2500);
           }
         }
       );

@@ -1,81 +1,84 @@
-<h1>{{ title }}</h1>
 
-<form [formGroup]="authForm" autocomplete="off">
+<div class="container">
+
+  <h1>{{ title }}</h1>
+
+  <form [formGroup]="authForm" autocomplete="off">
+    <div class="form_field" *ngIf="title == 'Register'">
+      <label>Nombre: </label>
+      <div class="item_row">
+        <input type="text" formControlName="name" required="required" />
+
+        <span *ngIf="isValidField('name')" class="validacion">{{
+          getFieldErrors("name")
+        }}</span>
+      </div>
+    </div>
+
+    <div class="form_field">
+      <label>Email: </label>
+      <div class="item_row">
+        <input type="text" formControlName="email" autofocus />
+
+        <span *ngIf="isValidField('email')" class="validacion">{{
+          getFieldErrors("email")
+        }}</span>
+      </div>
+    </div>
+
+    <div class="form_field">
+      <label>Password: </label>
+      <div class="item_row">
+        <input type="text" formControlName="password" />
+
+        <span *ngIf="isValidField('password')" class="validacion">{{
+          getFieldErrors("password")
+        }}</span>
+      </div>
+    </div>
 
     <div class="form_field" *ngIf="title == 'Register'">
-        <label>Nombre: </label>
-        <div class="item_row">
-            <input type="text" formControlName="name" required="required"> 
+      <label>Confirm Password: </label>
+      <div class="item_row">
+        <input type="text" formControlName="repeat_password" />
 
-            <span *ngIf="isValidField('name')" 
-                class="validacion"
-            >{{ getFieldErrors('name') }}</span>
-
-        </div>
-    </div>
-    
-    <div class="form_field">
-        <label>Email: </label>
-        <div class="item_row">
-            <input type="text" formControlName="email" autofocus> 
-
-            <span *ngIf="isValidField('email')" 
-                class="validacion"
-            >{{ getFieldErrors('email') }}</span>
-
-        </div>
-    </div>
-    
-    <div class="form_field">
-        <label>Password: </label>
-        <div class="item_row">
-            <input type="text" formControlName="password"> 
-
-            <span *ngIf="isValidField('password')" 
-                class="validacion"
-            >{{ getFieldErrors('password') }}</span>
-
-        </div>
-    </div>
-    
-    <div class="form_field" *ngIf="title == 'Register'">
-        <label>Confirm Password: </label>
-        <div class="item_row">
-            <input type="text" formControlName="repeat_password"> 
-
-            <span *ngIf="isValidField('repeat_password')" 
-                class="validacion"
-            >{{ getFieldErrors('repeat_password') }}</span>
-
-        </div>
+        <span *ngIf="isValidField('repeat_password')" class="validacion">{{
+          getFieldErrors("repeat_password")
+        }}</span>
+      </div>
     </div>
     <!-- TODO: hacer logica para que solo el administrador pueda asignar el rol -->
     <div class="form_field" *ngIf="title == 'Register'" aria-required="true">
-        <label>Role: </label>
-        <div class="item_row">
-            <input type="text" formControlName="role"> 
+      <label>Role: </label>
+      <div class="item_row">
+        <input type="text" formControlName="role" />
 
-            <span *ngIf="isValidField('role')" 
-                class="validacion"
-            >{{ getFieldErrors('role') }}</span>
-
-        </div>
+        <span *ngIf="isValidField('role')" class="validacion">{{
+          getFieldErrors("role")
+        }}</span>
+      </div>
     </div>
-<br>
-    <div class="buttons" >
-        <button (click)="onLogin()" 
-                [disabled]="authForm.invalid"
-                *ngIf="title == 'Login'"
-                >Login</button>
-<br>  
-        <button (click)="onRegister()" 
-                [disabled]="authForm.invalid"
-                *ngIf="title == 'Register'"
-                >Register</button>
+ 
+    <div class="buttons">
+      <button
+        (click)="onLogin()"
+        [disabled]="authForm.invalid"
+        *ngIf="title == 'Login'"
+      >
+        Login
+      </button>
+     
+      <button
+        (click)="onRegister()"
+        [disabled]="authForm.invalid"
+        *ngIf="title == 'Register'"
+      >
+        Register
+      </button>
     </div>
-
-</form>
+  </form>
 <br>
-<button (click)="acountRegister()"
-        *ngIf="title == 'Login'"            
-        >i've not an account.</button>
+  <button (click)="acountRegister()" *ngIf="title == 'Login'">
+    i've not an account.
+  </button>
+</div>

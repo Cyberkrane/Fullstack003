@@ -27,7 +27,7 @@ import { BussinessModule } from '../bussiness/bussiness.module';
     AuthRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BussinessModule 
+    BussinessModule, 
   ]
 })
 export class AuthModule { }
